@@ -1,0 +1,35 @@
+body {
+    background-color:#fff8f0;
+    color:#3e2723;
+    font-family:Arial, sans-serif;
+}
+h1 {
+    text-align: center;
+    color: #6f4e37;
+    font-size: 40px;
+}
+img {
+    display: block;
+    width: 250px;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+body >p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+h2 {
+    color:#8b4513;
+    border-bottom: 2px solid #d2b48c;
+    padding-bottom: 5px;
+    margin-top: 35px;
+}
+ul {
+    list-style-type: square;
+    line-height: 1.8;
+}
+li:hover {
+    color: brown;
+    cursor: pointer;
+}
