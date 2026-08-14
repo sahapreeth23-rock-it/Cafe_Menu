@@ -2,11 +2,18 @@ body {
     background-color:#fff8f0;
     color:#3e2723;
     font-family:Arial, sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
 }
 h1 {
     text-align: center;
     color: #6f4e37;
     font-size: 40px;
+    margin-bottom: 10px;
+}
+h1:hover {
+    transform: scale(1.03);
 }
 img {
     display: block;
@@ -29,7 +36,116 @@ ul {
     list-style-type: square;
     line-height: 1.8;
 }
-li:hover {
-    color: brown;
+li:hover { 
+    color: #8b4513;
+    transform: scale(1.02);
+}
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+th {
+    background-color: #6f4e37;
+    color:white;
+    padding: 12px;
+}
+td {
+    padding: 12px;
+    border: 1px solid #d2b48c;
+    text-align: center;
+}
+tr:hover {
+    background-color: #fff3e0;
+}
+form{
+    background-color:white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+input,
+select,
+textarea {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 15px;
+     border : 1px solid #d2b48c;
+     border-radius: 6px;
+}
+button {
+    background-color: #6f4e37;
+    color:white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #8b4513;
+}
+.special{
+    background-color: #f5e6d3;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+.info{
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+a {
+    color: #8b4513;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #3e2723;
+    color: white;
+    text-align: centre;
+    padding: 20px;
+    margin-top: 40px;
+ }
+ .menu-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+ }
+ .menu-container > div {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 600px){
+
+    .menu-container {
+        flex-direction: column;
+    }
 }
