@@ -1,154 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-        <title>Aroma Cafe</title>
-        <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Cafe</title>
+    <link rel="stylesheet" href="cstyle.css">
 </head>
-
 <body>
-    <h1>☕ Aroma Cafe</h1>
-    <a href="https://www.instagram.com/">
-      <img src="images.jfif" alt="A cup of coffee" width="250">
-    </a>  
-    <p><b> Welcome to Aroma Cafe- where every cup tells a story!</b></p>
-    <div class="menu-container">
-      <div>
-    
-          <h2>☕ Coffee</h2>
-          <ul>
-             <li>Espresso - $80</li>
-             <li>Cappuccino -$120</li>
-             <li>Cold Coffee -$180</li>
-             <li>Mocha -$130</li>
-          </ul>
-      </div>
 
-      <div>
-          <h2>🍰Desserts</h2>
-          <ul>
-              <li>Chocolate Cake -$150</li>
-              <li>Brownie -$100</li>
-              <li>Cheesecake -$180</li>
-              <li>Donut -$70</li>
-          </ul>
-      </div>
+    <nav class="navbar">
+        <div class="logo">☕ Aroma Cafe</div>
 
-      <div>
-            <h2>🥪Snacks</h2>
-            <ul>
-                <li>Veg Sandwich $100</li>
-                <li>French Fries $90</li>
-                <li>Paneer Wrap-$110</li>
-                <li>Garlic bread -$110</li>
-            </ul>
-      </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservation">Reserve</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>☕ Aroma Cafe</h1>
+        <a href="https://www.instagram.com/aromacafe_/?hl=en" target="_blank" rel="noopener">
+            <img src="images/main.jpg" alt="A cup of coffee" width="250">
+        </a>
+        <p class="welcome-text">
+             Welcome to Aroma Cafe — where every cup tells a story!
+        </p>
+    </section>
+
+    <section id="menu">
+        <h2>🍽️ Our Menu</h2>
+
+        <div class="menu-container">
+            <div class="menu-card" onclick="showCoffeePopup()">
+                <img src="images/coffee.jpg" alt="Coffee">
+                <h3>☕ Coffee</h3>
+                <ul>
+                    <li>Espresso - ₹80</li>
+                    <li>Cappuccino - ₹120</li>
+                    <li>Cold Coffee - ₹180</li>
+                    <li>Mocha - ₹130</li>
+                </ul>
+            </div>
+
+            <div class="menu-card" onclick="showDessertPopup()">
+                <img src="images/desserts.jpg" alt="Desserts">
+                <h3>🍰 Desserts</h3>
+                <ul>
+                    <li>Chocolate Cake - ₹150</li>
+                    <li>Brownie - ₹100</li>
+                    <li>Cheesecake - ₹180</li>
+                    <li>Donut - ₹70</li>
+                </ul>
+            </div>
+
+            <div class="menu-card" onclick="showSnackPopup()">
+                <img src="images/snacks.jpg" alt="Snacks">
+                <h3>🥪 Snacks</h3>
+                <ul>
+                    <li>Veg Sandwich - ₹100</li>
+                    <li>French Fries - ₹90</li>
+                    <li>Paneer Wrap - ₹110</li>
+                    <li>Garlic Bread - ₹110</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>📋 Full Menu</h2>
+
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Espresso</td>
+                    <td>Coffee</td>
+                    <td>₹80</td>
+                </tr>
+                <tr>
+                    <td>Chocolate Cake</td>
+                    <td>Dessert</td>
+                    <td>₹150</td>
+                </tr>
+                <tr>
+                    <td>Veg Sandwich</td>
+                    <td>Snack</td>
+                    <td>₹100</td>
+                </tr>
+                <tr>
+                    <td>Cold Coffee</td>
+                    <td>Coffee</td>
+                    <td>₹100</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="reservation">
+        <h2>📅 Reserve a Table</h2>
+        <form id="reservationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <small id="nameError" class="error-message"></small>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <small id="emailError" class="error-message"></small>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" placeholder="Number of guests">
+            <small id="guestsError" class="error-message"></small>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date">
+            <small id="dateError" class="error-message"></small>
+
+            <label for="time">Preferred Time:</label>
+            <select id="time">
+                <option value="">Select a time</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="5:00 PM">5:00 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+                <option value="9:00 PM">9:00 PM</option>
+            </select>
+            <small id="timeError" class="error-message"></small>
+
+            <label for="requests">Special Requests:</label>
+            <textarea id="requests" rows="4"></textarea>
+
+            <button type="submit">Reserve Now</button>
+            <p id="successMessage" class="success-message"></p>
+        </form>
+    </section>
+
+    <section id="about">
+        <div class="special">
+            <h2>⭐ Today's Special</h2>
+            <p>Try our delicious Chocolate Hazelnut Latte with a freshly baked brownie!</p>
+            <p><strong>Special Combo: ₹199</strong></p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="contact">
+        <div class="info">
+            <h2>🕒 Opening Hours</h2>
+            <p>Monday - Friday: 9:00 AM - 9:00 PM</p>
+            <p>Saturday - Sunday: 10:00 AM - 10:00 PM</p>
+
+            <h2>📍 Visit Us</h2>
+            <p>123 Coffee Street, Hyderabad</p>
+
+            <h2>📞 Contact Us</h2>
+            <p>Phone: <a href="tel:+919030287689">+91 9030287689</a></p>
+            <p>Email: <a href="mailto:aromacafe@example.com">aromacafe@example.com</a></p>
+        </div>
+
+        <h2>🔗 Follow Us</h2>
+        <a href="https://www.instagram.com/aromacafe_/?hl=en" target="_blank" rel="noopener">Visit our Instagram</a>
+    </section>
+
+    <div id="coffeePopup" class="popup" onclick="closeOutside(event, 'coffeePopup')">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('coffeePopup')">×</button>
+            <img src="images/coffee.jpg" alt="Coffee">
+            <h2>☕ Our Coffee</h2>
+            <p>Freshly brewed coffee made with carefully selected beans for the perfect Aroma Cafe experience.</p>
+            <h3>Our favourites</h3>
+            <p>Espresso — ₹80</p>
+            <p>Cappuccino — ₹120</p>
+            <p>Cold Coffee — ₹180</p>
+            <p>Mocha — ₹130</p>
+        </div>
     </div>
 
-    <h2>📋 Full Menu</h2>
-
-    <table border="1">
-      <tr>
-        <th>Item</th>
-        <th>Category</th>
-        <th>Price</th>
-      </tr>
-
-      <tr>
-        <td>Espresso</td>
-        <td>Coffee</td>
-        <td>₹80</td>
-      </tr>
-
-      <tr>
-        <td>Chocolate Cake</td>
-        <td>Dessert</td>
-        <td>₹150</td>
-      </tr>
-
-      <tr>
-        <td>Veg Sandwich</td>
-        <td>Snack</td>
-        <td>₹100</td>
-      </tr>
-
-      <tr>
-        <td>Cold Coffee</td>
-        <td>Coffee</td>
-        <td>₹100</td>
-      </tr>
-    </table>
-    <h2>📅 Reserve a Table</h2>
-    <form>
-        <label>Name:</label>
-        <input type="text">
-
-        <br><br>
-
-        <label>Email:</label>
-        <input type="Email">
-
-        <br><br>
-
-        <label>Number of Guests:</label>
-        <input type="number">
-
-        <br><br>
-        <label>Date:</label>
-        <input type="date">
-
-        <br><br>
-        <label>Preferred Time</label>
-        <select>
-        <option>10:00 AM</option>
-        <option>12:00 PM</option>
-        <option>2:00 PM</option>
-        <option>5:00 PM</option>
-        <option>7:00 PM</option>
-        <option>9:00 PM</option>
-    </select>
-
-    <br><br>
-    <label>Special Requests:</label>
-
-    <textarea rows="4" cols="30"></textarea>
-
-    <br><br>
-
-    <button>Reserve Now</button>
-    </select>
-
-    </form>
-      
-    <div class="special">
-        <h2>⭐ Today's Special</h2>
-        <p> Try our delicious Chocolate Hazelnut Latte with a freshly baked brownie!</p>
-        <p><strong>Special Combo: $199</strong></p>
+    <div id="dessertPopup" class="popup" onclick="closeOutside(event, 'dessertPopup')">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('dessertPopup')">×</button>
+            <img src="images/desserts.jpg" alt="Desserts">
+            <h2>🍰 Our Desserts</h2>
+            <p>Delicious freshly prepared desserts made to add a sweet touch to your Aroma Cafe experience.</p>
+            <h3>Our favourites</h3>
+            <p>Chocolate Cake — ₹150</p>
+            <p>Brownie — ₹100</p>
+            <p>Cheesecake — ₹180</p>
+            <p>Donut — ₹70</p>
+        </div>
     </div>
-    <hr>
-    <div class="info">
-    <h2>🕒 Opening hours</h2>
-    <p>Monday-Friday:9:00 AM - 9:00 PM</p>
-    <p>Saturday-Sunday:10:00AM-10:00PM</p>
 
-    <h2>📍 Visit Us</h2>
-    <p>123 Coffee Street , Hyderabad</p>
+    <div id="snackPopup" class="popup" onclick="closeOutside(event, 'snackPopup')">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('snackPopup')">×</button>
+            <img src="images/snacks.jpg" alt="Snacks">
+            <h2>🥪 Our Snacks</h2>
+            <p>Fresh and tasty snacks perfect for a quick bite with your favourite coffee.</p>
+            <h3>Our favourites</h3>
+            <p>Veg Sandwich — ₹100</p>
+            <p>French Fries — ₹90</p>
+            <p>Paneer Wrap — ₹110</p>
+            <p>Garlic Bread — ₹110</p>
+        </div>
+    </div>
 
-    <h2> 📞Contact Us</h2>
-    <p>Phone: <a href="tel: +91 9030287689">+91 9030287689</a></p>
-    <p>Email: <a href="hey@thearomacafe.in">aromacafe@example.com</a></p>
-    </div>   
-    
+    <footer>
+        <hr>
+        <p>© 2026 Aroma Cafe. All rights reserved.</p>
+        <p>Made with Love and HTML.</p>
+    </footer>
 
-    <h2>🔗 Follow Us</h2>
-
-<a href="https://www.instagram.com/aromacafe_/?hl=en">Visit our Instagram</a>
-
-    </h2></h2></h>
-
- </body>
- <footer>
-    <hr>
-    <p> @2026 Aroma Cafe . All rights reserved.</p>
-    <p>Made with Love and HTML.</p>
- </footer>
+    <script src="cscript.js"></script>
+</body>
 </html>
